@@ -10,7 +10,7 @@ Before we know all the best questions to ask on behalf of our shareholders we wi
 ### Imports
 
 For this project this is the imports we will be using:
-
+```python
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
@@ -27,7 +27,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import cross_val_score
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_squared_error
-
+```
 ### Data
 data = pd.read_csv('kc_house_data.csv') #This is the only dataset for this project
 
@@ -110,6 +110,8 @@ Good news, it looks like there might be some funneling toward the higher prices,
 This can seem inscrutable, but we know that all features related to zipcode are not something our home owners can change, latitude is similarly immutable. So that makes sqft_living the most significant, changeable, feature of our home price model, followed by grade and condition.
 
 These are very useful insights because they are a good combination of expected (square footage increases lead to an increase in home price) and less expected (2 subjective rating categories).
+
+<img src="distplot_sqft.png">
 
 ### Question #2 Which immutable features of the house (location, year built) will most drastically impact sale price?
 As we saw when sorting our parameters, features related to location were extrememely important. Specifically the zipcodes:98039 and 98004 were strongly correllated with higher property values while 98019 and 98133 were correllated with the lower property values. Latitude and Waterfront properties were also correllated with higher property values.
